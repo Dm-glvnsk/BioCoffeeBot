@@ -5,7 +5,8 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 storage = MemoryStorage()
 
-TOKEN = '5683777800:AAE8idnZFdn-CD6hMm0dckdFzJzowv8W8ZY'
+with open("TOKEN.txt", "r") as file:
+    TOKEN = f'{file.readline()}'
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot, storage=storage)
